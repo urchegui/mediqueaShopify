@@ -1,0 +1,142 @@
+@import "../utils/mixin.scss";
+@import "../utils/variables.scss";
+
+.chatbot-wrapper {
+    height: 100dvh;
+    padding-top: 12vh;
+
+    #dattabot-header {
+        display: inline-flex;
+        align-items: center;
+
+        .col-xs-2 {
+            margin-right: 0 !important;
+            width: 5% !important;
+
+            @media screen and (max-width: $layout-breakpoint-xs-small) {
+                margin-right: 5% !important;
+                width: 18% !important;
+            }
+
+            @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+                margin-right: 5% !important;
+                width: 10% !important;
+            }
+            @media screen and (min-width: $layout-breakpoint-medium + 1) and (max-width: $layout-breakpoint-large) {
+                margin-right: 0 !important;
+                width: 10% !important;
+            }
+        }
+    }
+
+    #dtt_widgetdattabot {
+        place-content: center;
+        align-items: center;
+        justify-content: center;
+        display: grid;
+    }
+
+    #dattabot-container {
+        max-width: 90vw;
+        width: 90vw;
+        height: fit-content;
+        overflow: hidden;
+    }
+
+    #dtt_widgetdattabot #dattabot-body {
+        display: grid;
+        width: 99%;
+
+        @media screen and (max-width: $layout-breakpoint-xs-small) {
+            width: 95%;
+            height: 50dvh;
+        }
+
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+            width: 95%;
+            height: 50dvh;
+        }
+    }
+
+    #dtt_widgetdattabot #formchatbot input[type="text"],
+    #formchatbot3 input[type="text"] {
+        background-color: transparent;
+        width: 95%;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    #dtt_widgetdattabot #formzone {
+        width: 97%;
+        border: none;
+        margin: auto;
+    }
+
+    fieldset {
+        margin: 0;
+        border-radius: 8px;
+        @media screen and (max-width: $layout-breakpoint-xs-small) {
+            position: relative;
+        }
+
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+            position: relative;
+        }
+    }
+
+    #dtt_widgetdattabot #dattabot-poweredby {
+        display: none !important;
+    }
+
+    #dtt_widgetdattabot #messagezone .botmessage {
+        display: grid;
+
+        @media screen and (max-width: $layout-breakpoint-xs-small) {
+            width: 80%;
+        }
+
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+            width: 80%;
+        }
+    }
+
+    #dtt_widgetdattabot #messagezone {
+        margin-bottom: 1rem;
+
+        @media screen and (max-width: $layout-breakpoint-xs-small) {
+            height: 41dvh;
+        }
+
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+            height: 41dvh;
+        }
+    }
+
+    .dattabot-send {
+        @media screen and (max-width: $layout-breakpoint-xs-small) {
+            padding: 0 0 0 1rem !important;
+            width: 12%;
+            background: lightgray;
+            position: absolute !important;
+            right: 0 !important;
+            height: 100%;
+            top: 0;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+        }
+
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+            padding: 0 0 0 1rem !important;
+            width: 12%;
+            background: lightgray;
+            position: absolute !important;
+            right: 0 !important;
+            height: 100%;
+            top: 0;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+        }
+    }
+}

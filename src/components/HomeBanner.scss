@@ -1,0 +1,97 @@
+@import '../utils/variables.scss';
+
+.bannerContainer{
+    height: 100vh;
+    background-color: white;
+    position: relative;
+    @media screen and (max-width: $layout-breakpoint-xs-small){ 
+        height: 57vh;
+        .mobile-banner_wrapper {            
+            padding: 0 1rem; 
+        }
+        h3 {
+            margin: 0;
+            line-height: 2.2rem;
+            font-size: 3ch;
+        }
+    }
+    @media screen and (min-width: $layout-breakpoint-xs-small) and (max-width: $layout-breakpoint-medium){ 
+        height: 90vh;
+        .mobile-banner_wrapper {            
+            padding: 0 2rem; 
+        }        
+        h3{
+            text-align: left;
+            text-wrap: pretty;
+            margin-left: 2rem;
+            width: fit-content;
+            line-height: 2.9rem;
+            /* font-weight: bolder; */
+            font-size: 3ch;
+            color: black;
+            span{
+                font-size: 3ch;
+            } 
+        }
+    }
+    @media screen and (max-width: $layout-breakpoint-large){ 
+        
+        .mobile-banner_wrapper{
+            display: grid;
+            position: absolute;
+            align-items: stretch;
+            top: 50%;
+            transform: translateY(-35%);
+            justify-items: end;
+        }
+        .text, .drawing{
+            width: 50%;
+        }
+        .text{
+            place-self: flex-start;
+            margin-bottom: 1rem;
+        }
+        img{
+            width: 100%;
+        }
+        
+        h3{
+            text-align: left;
+            text-wrap: pretty;
+            width: fit-content;
+            color: black;
+            span{
+                font-size: 3ch;
+            } 
+        }
+    }
+    @media screen and (min-width: $layout-breakpoint-small + 1) and (max-width: $layout-breakpoint-medium){ 
+        .mobile-banner_wrapper{
+            padding: 0;
+            width: 100%;
+            transform: translateY(-50%);
+        }
+        .text{
+            margin: 3rem 0 0 3rem;
+        }
+        .drawing{
+            width: 40%;
+            margin-right: 3rem;
+        }
+    }
+    @media screen and (min-width: $layout-breakpoint-medium + 1) and (max-width: $layout-breakpoint-large){ 
+        .mobile-banner_wrapper{
+            padding: 0;
+            width: 100%;
+            transform: translateY(-50%);
+        }
+        .text{
+            margin: 3rem 0 0 5rem;
+            font-size: 3.5ch;
+        }
+        .drawing{
+            width: 40%;
+            margin-right: 3rem;
+        }
+    }
+}

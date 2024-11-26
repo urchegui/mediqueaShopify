@@ -1,0 +1,338 @@
+@import "./variables.scss";
+
+@mixin aboutUsPreview{
+    width: 50%;
+    img{
+        width: 30%;
+        border-radius: 5%;
+        margin: 0 2rem;
+    }
+}
+
+@mixin navbar{
+    width: 100%;
+    height: $navbarHeight;
+    position: fixed;
+    top: 0;
+    background: white;
+    z-index: $zIndex-middle;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $corporate-color;
+    .web-sections{
+        align-self: center;
+        text-align: end;
+        display: inline-flex;
+        justify-content: space-evenly;
+        align-items: center;
+        a{
+            color: $corporate-color;
+            font-weight: bold;
+            font-size: $bg-fontSize;
+            &:first-child{
+                padding-left:2rem;
+            }
+            &:last-child{
+                padding-right:1rem;
+            }
+
+        }
+    }
+    .hamburger{
+        width: 20%;
+        align-self: center;
+        .hamburger-react{
+            margin: auto;
+        }
+    }
+    .mobile-logo_wrapper{
+        width: 80%;
+        text-align: left;
+        align-self: center;
+        @media screen and (max-width: $layout-breakpoint-medium){ 
+            width: 30%;
+        }
+        @media screen and (min-width: $layout-breakpoint-medium + 1) and (max-width: $layout-breakpoint-large){ 
+            width: 20%;
+        }
+        img{
+            width: 80%;
+            padding-left: 1rem;
+            @media screen and (min-width: $layout-breakpoint-small + 1 ) and (max-width: $layout-breakpoint-medium){ 
+                width: 40%;
+            }
+        }
+    }
+    .socialMediaLogos{
+        width: 40%;
+        display: inline-flex;
+        align-items: center;        
+        justify-content: flex-end;
+        padding-right: 4rem;
+        a{
+            color: $corporate-color;
+            margin: 0 8px;
+            font-size: 25px;
+        }
+        @include bag;
+    }
+    .mobile_menu{
+        position: absolute;
+        height: 90vh;
+        display: grid;
+        background: white;
+        width: 100%;
+        top: 100%;
+        align-content: space-around;
+        justify-content: center;
+        align-items: center;
+        justify-items: stretch;
+        a{
+            color: $corporate-color;
+            font-weight: bold;
+            font-size: 3ch;
+        }
+        transition: right 0.5s ease-out;
+        &.false{
+            right: 100%;
+        }
+        &.true{
+            right: 0;
+        }
+    }
+}
+@mixin bag{
+    .bag{
+        position: relative;
+        cursor: pointer;
+        .number-of-products{
+            position: absolute;
+            background: $corporate-color;
+            border-radius: 100%;
+            height: 15px;
+            width: 15px;
+            font-size: 10px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            color: white;
+        }
+        svg{
+            margin-left: 8px;
+            font-size: 25px;
+            color: black;
+        }
+    }
+}
+@mixin product{
+    .product-wrapper{
+        padding: 2rem;
+        margin: 1rem;
+        background: #d3d3d340;
+        border-radius: 20px;
+        @media screen and (max-width: $layout-breakpoint-xs-small) {
+            height: 270px;
+            padding: 13px;
+            margin: 5px;
+            position: relative;
+        }
+
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-small) {
+            height: 270px;
+            padding: 13px;
+            margin: 5px;
+            position: relative;
+        }
+        @media screen and (min-width: $layout-breakpoint-small + 1) and (max-width: $layout-breakpoint-medium) {
+            height: 300px;
+            position: relative;
+
+        }
+        @media screen and (min-width: $layout-breakpoint-medium + 1) and (max-width: $layout-breakpoint-large) {
+            height: 220px;
+            position: relative;
+
+        }
+
+        .product_image{
+            img{
+                object-fit: contain;
+                width: 100%;
+            }
+        }
+        .product_detail{
+            display: flex;
+            justify-content: space-between;
+            @media screen and (max-width: $layout-breakpoint-xs-small) {
+                display: grid;
+                justify-content: unset;
+            }
+    
+            @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+                display: grid;
+                justify-content: unset;
+            }
+            p{
+                color: black;
+                @media screen and (max-width: $layout-breakpoint-xs-small) {
+                    margin-bottom: 0;
+                    margin-top: 5px;
+        
+                }
+        
+                @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+                    margin-bottom: 0;
+                    margin-top: 5px;
+                }
+            }
+            .product_price{
+                display: inline-flex;
+                font-weight: bolder;
+                @media screen and (max-width: $layout-breakpoint-xs-small) {
+                    justify-content: space-between;       
+                }
+        
+                @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+                    justify-content: space-between;       
+
+                }
+            }
+            .original-price{
+                margin-right: 2rem;
+                text-decoration: line-through;
+            }
+        }
+        .add_to_cart{
+            background-color: #ffbd00;
+            width: 100%;
+            font-weight: bold;
+            font-size: 18px;
+            text-transform: uppercase;
+            @media screen and (max-width: $layout-breakpoint-xs-small) {
+                position: absolute; 
+                bottom: 20px;
+                left: 0;
+                right: 0;
+                margin: auto;    
+                width: 80%;   
+                font-size: 15px;        
+            }
+    
+            @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-large) {
+                position: absolute; 
+                bottom: 20px;
+                left: 0;
+                right: 0;
+                margin: auto;    
+                width: 80%;   
+                font-size: 15px; 
+            }
+        }
+    }
+}
+@mixin rightWrapper{
+    .right_wrapper{
+        @include bag;
+        @media screen and (max-width: $layout-breakpoint-xs-small){         
+            width: 30%;
+            display: inline-flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-large){ 
+            width: 30%;
+            display: inline-flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 2rem;
+        }
+    }
+}
+@mixin aboutUs{
+    display: flex;
+    align-items: center;
+    background: #F3F3F3;
+    margin: auto;
+    border-radius: 20px;
+    @media screen and  (max-width: $layout-breakpoint-medium) {
+        height: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: $navbarHeight;
+        
+    }
+    @media screen and  (max-width: $layout-breakpoint-large) {
+        height: auto;
+        padding-top: $navbarHeight;
+        padding-bottom: $navbarHeight;
+        
+    }
+    .left-part{
+        @include aboutUsPreview;
+        text-align: center;
+        @media screen and (max-width: $layout-breakpoint-medium){
+            width: 100%;
+            padding-top: 4rem;
+        }
+    }
+    .right-part{
+        @include aboutUsPreview;
+        h3{
+            width: 75%;
+            color: black;
+            font-size: 3.2ch;
+            text-wrap: pretty;
+            @media screen and (max-width: $layout-breakpoint-xs-small){ 
+                margin: 2rem auto 0;
+                text-align: left;
+            }
+            @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium){ 
+                margin: 2rem auto 0;
+                text-align: left;
+            }
+        }
+        p{
+            line-height: 35px;
+            letter-spacing: .5px;
+            width: 75%;
+            text-wrap: pretty;
+            text-align: justify;
+            color: $text-color;
+            font-size: calc(12px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+            @media screen and (max-width: $layout-breakpoint-medium){
+                width: 80%;
+                margin: 2rem auto;
+            }
+        }
+        button{
+            background-color: $corporate-color;
+            color: white;
+            margin-top: 2rem;
+            &:hover{
+                border-color: $corporate-color;
+                background-color: white;
+                color: $corporate-color;
+            }
+            &:focus{
+                outline: 1px solid $corporate-color;
+            }
+            @media screen and (max-width: $layout-breakpoint-medium){
+                margin: 0 0 2rem 0;
+                width: 80%;
+            }
+        }
+        a{
+            color: white;
+            &:hover{
+                border-color: $corporate-color;
+                background-color: white;
+                color: $corporate-color;
+            }
+        }
+        @media screen and (max-width: $layout-breakpoint-medium){
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

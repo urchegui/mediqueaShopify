@@ -1,0 +1,77 @@
+@import "../utils/mixin.scss";
+@import "../utils/variables.scss";
+
+.category {
+    width: 95%;
+    border: 1px solid lightgray;
+    height: 30vh;
+    border-radius: 15px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-bottom: 4rem;
+    padding: 1rem 1rem 1rem 0;
+    
+    .textLoading {
+        width: 50%;
+        height: 10vh;
+        background: #d3d3d321;
+        border-radius: 15px;
+        margin: 2rem 0 0 2rem;
+        box-shadow: 3px 3px rgb(0 0 0 / 8%);
+    }
+
+    .imageLoading {
+        width: 25%;
+        height: -webkit-fill-available;
+        background: #d3d3d321;
+        border-radius: 15px;
+        margin: 2rem 2rem 2rem 0;
+        box-shadow: 3px 3px rgb(0 0 0 / 8%);
+    }
+
+    .textLoaded {
+        width: 50%;
+        height: 10vh;
+        border-radius: 15px;
+        margin: 2rem 0 0 2rem;
+        color: black;
+        font-weight: bold;
+        font-size: 25px;
+        @media screen and (max-width: $layout-breakpoint-xs-small) {
+            font-size: 15px; 
+        }
+
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+            word-wrap: break-word;
+        }
+    }
+
+    $images: "anatomia-patologica", "bioquimica", "cardiologia", "cirugia-general", "digestivo", "electrocardiografia", "endocrinologia", "farmacologia", "fisiologia", "ginecologia-y-obstetricia", "histologia", "humanidades", "inmunologia", "medicina-interna",
+        "microbiologia", "neumologia", "neurologia", "oncologia", "otorrinolaringologia", "pediatria", "toxicologia", "reumatologia", "vascular";
+
+    @each $image in $images {
+        .featured-image_#{$image} {
+            background-image: url("../assets/" + ($image) + ".png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    .imageLoaded {
+        width: 25%;
+        height: 100%;
+        text-align: center;
+        border-radius: 5px;
+
+        @media screen and (max-width: $layout-breakpoint-medium) {
+            height: auto;
+        }
+
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+            height: auto;
+        }
+    }
+}

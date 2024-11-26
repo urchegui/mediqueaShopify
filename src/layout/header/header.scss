@@ -1,0 +1,48 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixin.scss';
+
+#navbar-home{
+    @include navbar;
+    
+    .web-sections{
+        width: 65%;
+    }
+    .logo-wrapper_navbar{
+        width: 20%;
+        height: 100vh;
+        place-content: center;
+        align-items: center;
+        justify-content: center;
+        display: grid;
+        img{
+            height: 100%;
+            // position: absolute;
+            // margin: auto;
+            // left: 0;
+            // right: 0;
+        }
+    }  
+    @include rightWrapper;  
+}
+#navbar{
+    @include navbar;
+    border-bottom: 1px solid $corporate-color;
+    box-shadow: 0px 2px #8cc5c738;
+    .web-sections{
+        width: 40% !important;
+    }
+    .logo-wrapper_navbar{
+        width: 20% !important;
+        height: 100%;
+        img{
+            transform: none !important;
+            height: 60% !important;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 1rem;
+        }
+    }  
+    @include rightWrapper;
+}

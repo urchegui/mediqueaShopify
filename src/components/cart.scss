@@ -1,0 +1,176 @@
+@import '../utils/variables.scss';
+
+.cart-drawer{
+    position: fixed;
+    height: 100dvh;
+    top: 0;
+    width: 10vw;
+    background: white;
+    color: black;
+    border-left: 1px solid $corporate-color;
+    padding: 0 15px;
+    z-index: $zIndex-top;
+    &.closed{
+        right: -20%;
+        transition: right 0.8s ease-out;
+    }
+
+    &.open{
+        right: 0;
+        transition: right 0.8s ease-in;
+        @media screen and (max-width: $layout-breakpoint-xs-small){ 
+            width: 63vw;
+            z-index: $zIndex-top;
+        }
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-large){ 
+            width: 33vw;
+            z-index: $zIndex-top;
+        }
+    }
+    .title{
+        text-align: center;
+        position: relative;
+        @media screen and (max-width: $layout-breakpoint-xs-small){ 
+            margin-top: 0;
+        }
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-large){ 
+            margin-top: 0;
+        }
+        .closeCart{
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            font-size: 2.5ch;  
+            font-weight: bold;   
+            cursor: pointer; 
+        }
+        h1{
+            padding-top: 4rem;
+            font-size: 20px;
+        }
+    }
+    .cartItems{
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 60dvh;
+        --sb-track-color: #3f5656;
+        --sb-thumb-color: #8cc5c7;
+        --sb-size: 7px;
+        padding-right: 15px;
+
+        &::-webkit-scrollbar {
+            width: var(--sb-size)
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: var(--sb-track-color);
+            border-radius: 10px;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: var(--sb-thumb-color);
+            border-radius: 10px;
+            
+        }
+        
+        @supports not selector(::-webkit-scrollbar) {
+            body {
+            scrollbar-color: var(--sb-thumb-color)
+                            var(--sb-track-color);
+            }
+        }
+    }
+    .emptyCart{
+        padding-top: 10px;
+    }
+}
+
+.cart_product_wrapper{
+    width: 100%;
+    padding: 5px;
+    height: 20dvh;
+    margin-top: 1rem;
+    border-top: 1px solid lightgray;
+    @media screen and (max-width: $layout-breakpoint-medium){ 
+        height: 40dvh;
+    }
+    p{
+        margin: 0;
+    }
+    input{
+        width: 30px;
+        text-align: center;
+        background: #d3d3d36e;
+        border: none;
+        border-radius: 5px;
+        color: black;
+    }
+    img{
+        width: 100%;
+    }
+    .cart_product_title{
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    .cart_product_description{
+        display: inline-flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+    .cart_product_delete{
+        cursor: pointer;
+    }
+    .cart_product_totalCost{
+        margin-top: 10px;
+        display: inline-flex;
+        justify-content: space-between;
+        width: 95%;
+        font-size: 15px;
+        .finalItemPrice{
+            font-weight: bold;
+        }
+    }
+}
+.bottomCart{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #d3d3d370;
+    border-top: 1px solid black;
+    .totalPrice{
+        display: inline-flex;
+        justify-content: space-between;
+        width: 86%;
+        padding: 0 1rem;
+        .totalPrice_price{
+            font-weight: bold;
+        }
+    }
+    .checkout-button_wrapper{
+        button{
+            border:none;
+            width: 90%;
+            border-radius: 0;
+            background: #006900;
+            padding: 1.5rem;
+            cursor: pointer;
+            box-shadow: 3px 3px 11px rgb(33 33 33);
+            border-radius: 9px;
+            margin: 1rem;
+            font-weight: bold;
+            color: white;
+            a{
+                color: white;
+            }
+        }
+        button:active {
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        button:focus {
+            outline: none;
+        }
+    }
+}

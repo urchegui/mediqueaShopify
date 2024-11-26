@@ -1,0 +1,200 @@
+@import '../utils/variables.scss';
+@import '../utils/mixin.scss';
+
+.sidenavbar {
+    height: 90vh;
+    background: white;
+    border-right: 1px solid $corporate-color;
+    width: $sideNavbar-width;
+    margin-top: 10vh;
+    position: fixed;
+
+    @media screen and (max-width: $layout-breakpoint-medium) {
+        height: 10dvh;
+        width: 100vw;
+        border-bottom: 1px solid $corporate-color;
+        border-right: none;
+        position: fixed;
+        z-index: $zIndex-base;
+        margin-top: 10.1dvh;
+    }
+
+    @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+        height: 10dvh;
+        width: 100vw;
+        border-bottom: 1px solid $corporate-color;
+        border-right: none;
+        position: fixed;
+        z-index: $zIndex-base;
+        margin-top: 10.1dvh;
+        text-align: center;
+    }
+
+    .multimedia_menu {
+        @media screen and (max-width: $layout-breakpoint-medium) {
+            display: inline-flex;
+            width: 90%;
+            margin: auto;
+            height: 10dvh;
+            align-items: center;
+        }
+
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+            display: inline-flex;
+            width: 90%;
+            margin: auto;
+            height: 10dvh;
+            align-items: center;
+        }
+
+    }
+
+    ul {
+        @media screen and (max-width: $layout-breakpoint-xs-small) {
+            padding-left: 0;
+            display: inline-flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0;
+        }
+
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+            padding-left: 0;
+            display: inline-flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0;
+        }
+
+        @media screen and (min-width: $layout-breakpoint-medium + 1) and (max-width: $layout-breakpoint-large) {
+            padding-left: 10px;
+        }
+
+        list-style-type: none;
+
+        li {
+            @media screen and (max-width: $layout-breakpoint-xs-small) {
+                width: 100%;
+                margin-bottom: 0;
+            }
+
+            @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+                width: 100%;
+                margin-bottom: 0;
+            }
+
+            margin-bottom: 1rem;
+            width: 80%;
+            border-radius: 10px;
+
+            &:hover {
+                border: 0.6px solid #8CC5C7;
+                border: 0.6px solid #8CC5C7;
+                border-bottom: transparent;
+                box-shadow: 2px 2px rgb(140, 188, 190);
+            }
+
+            &:active {
+                border: 0.6px solid #8CC5C7;
+                border-bottom: transparent;
+                box-shadow: 1px 1px rgb(140, 188, 190);
+                transform: translateY(4px);
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    button {
+        width: 100%;
+
+        @media screen and (max-width: $layout-breakpoint-xs-small) {
+            width: 90%;
+            margin: auto;
+            padding: 0.5rem 10px;
+            font-size: 11px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+            align-items: center;
+            justify-content: center;
+            padding: 0.3rem .5rem;
+            width: 90%;
+            margin: auto;
+            font-size: 13px;
+        }
+
+        @media screen and (min-width: $layout-breakpoint-medium + 1) and (max-width: $layout-breakpoint-large) {
+            padding: 0.6rem 0rem;
+            justify-content: center;
+        }
+
+        &.active {
+            background-color: #f9f9f9;
+        }
+
+        color: #8CC5C7;
+        background-color: transparent;
+        padding: 0.5rem 1.8rem;
+        display: flex;
+
+        svg {
+            @media screen and (max-width: $layout-breakpoint-xs-small) {
+                padding-right: 5px;
+                font-size: 16px;
+            }
+
+            @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {}
+
+            padding-right: 11px;
+            font-size: 19px;
+        }
+
+        &:hover {
+            border: none;
+        }
+
+        &:active {
+            border: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        .anki_btn {
+            width: fit-content;
+            height: 40px;
+            margin-right: 11px;
+
+            @media screen and (max-width: $layout-breakpoint-xs-small) {
+                width: auto;
+                height: 31px;
+
+            }
+
+            @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+                height: 31px;
+                width: auto;
+            }
+
+            @media screen and (min-width: $layout-breakpoint-medium + 1) and (max-width: $layout-breakpoint-large) {
+                width: 41%;
+                height: 40px;
+                margin-right: 0px;
+            }
+        }
+    }
+
+    &.show {
+        visibility: visible;
+    }
+
+    &.hide {
+        visibility: hidden;
+    }
+}

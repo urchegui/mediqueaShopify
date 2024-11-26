@@ -1,0 +1,37 @@
+@import "../utils/mixin.scss";
+@import "../utils/variables.scss";
+
+.multimedia-page{
+    height: auto;
+    padding-top: $navbarHeight + 2;
+    width: 100vw - ($sideNavbar-width + 3);
+    margin-left: $sideNavbar-width + 2;
+    @media screen and (max-width: $layout-breakpoint-xs-small){ 
+        padding: 25vh 0;
+        width: 90vw;
+        margin: auto;
+    }
+    @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium){ 
+        padding: 25vh 0;
+        width: 90vw;
+        margin: auto;
+    }
+    div:has(.BackgroundColorContainer){
+        background-color: $corporate-color;
+    }
+    .youtube-iframes{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        iframe{
+            width: 95%;
+            height: 33vh;
+            margin: 10px;
+        }
+    }
+    .spotify-iframes{
+        iframe{
+            width: 100%;
+            height: 352px;
+        }
+    }
+}

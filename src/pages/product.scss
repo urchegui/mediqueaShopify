@@ -1,0 +1,117 @@
+@import "../utils/mixin.scss";
+@import "../utils/variables.scss";
+
+.product-page {
+    height: auto;
+    padding-top: $navbarHeight + 2;
+    width: 100vw - ($sideNavbar-width + 3);
+    margin-left: $sideNavbar-width + 2;
+
+    @media screen and (max-width: $layout-breakpoint-xs-small) {
+        padding: 20vh 0;
+        width: 100vw;
+        margin: 0;
+    }
+
+    @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+        padding: 20vh 0;
+        width: 100vw;
+        margin: 0;
+    }
+
+    .product-page_top{
+        display: inline-flex;
+        justify-content: space-between;
+        @media screen and (max-width: $layout-breakpoint-xs-small) {
+            display: block;
+        }
+    
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+            display: block;
+
+        }
+        .collection-info{
+            width: 60%;
+            @media screen and (max-width: $layout-breakpoint-xs-small) {
+                width: 84%;
+                text-align: left;
+                margin: auto;
+            }
+        
+            @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+                width: 84%;
+                text-align: left;
+                margin: auto;
+            }
+        }
+        .complete-pack{
+            width: 40%;
+            @include product;
+            @media screen and (max-width: $layout-breakpoint-xs-small){ 
+                width: 90%;
+                margin: auto;                
+            }
+            @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium){ 
+                width: 90%;
+                margin: auto; 
+            }
+            .product-wrapper{
+                @media screen and (max-width: $layout-breakpoint-xs-small){ 
+                    height: 350px;              
+                }
+                @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-small){ 
+                    height: 550px;              
+
+                }
+                @media screen and (min-width: $layout-breakpoint-small + 1) and (max-width: $layout-breakpoint-medium){ 
+                    height: 550px; 
+                    padding: 13px 5rem;
+                }
+                @media screen and (min-width: $layout-breakpoint-medium + 1) and (max-width: $layout-breakpoint-large){ 
+                    height: 350px; 
+                    padding: 13px 2rem;
+                }
+            }
+        }
+    }
+    div:has(.BackgroundColorContainer) {
+        background-color: $corporate-color;
+    }
+
+    h1 {
+        color: black;
+        text-align: left;
+    }
+
+    .collection-description {
+        width: 70%;
+        @media screen and (max-width: $layout-breakpoint-xs-small) {
+            width: 100%;
+        }
+    
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium) {
+            width: 100%;
+        }
+        p {
+            color: black;
+            text-wrap: pretty;
+            line-height: 2rem;
+        }
+    }
+    .product_list{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        margin-top: 2rem;
+        @include product;
+        @media screen and (max-width: $layout-breakpoint-xs-small) {
+            grid-template-columns: 50% 50%;
+            padding: 19px;
+
+        }
+    
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-large) {
+            grid-template-columns: 33% 33% 33%;
+            padding: 19px;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@import "../utils/mixin.scss";
+@import "../utils/variables.scss";
+
+.article-expanded{
+    visibility: hidden;
+    height: 0;
+    transition: height 0.5s ease-out;
+    &.open{
+        visibility: visible;
+        position: absolute;
+        height: 100dvh;
+        width: 100vw;
+        margin: auto;
+        top: 0;
+        left: 0;
+        background: #000000b5;
+        transition: height 0.5s ease-in;
+        margin-top: $navbarHeight;
+        .article-expanded_wrapper{
+            display: block;
+        }
+    }
+    svg{
+        position: absolute;
+        top: 2rem;
+        font-size: 6ch;
+        right: 2rem;
+        @media screen and (max-width: $layout-breakpoint-xs-small){ 
+            top: 0;
+            right: 0;
+        }
+        @media screen and (min-width: $layout-breakpoint-xs-small) and (max-width: $layout-breakpoint-medium){ }
+    }
+    .article-expanded_wrapper{
+        position: relative;
+        height: 90dvh;
+        width: 100vw;
+        display: none;
+        iframe{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 80%;
+            width: 50vw;
+            margin: auto;
+            left: 0;
+            right: 0;
+            @media screen and (max-width: $layout-breakpoint-xs-small){ 
+                width: 90vw;
+            }
+            @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium){
+                width: 65vw;
+            }
+        }
+    }
+}

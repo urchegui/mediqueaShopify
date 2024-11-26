@@ -1,0 +1,8 @@
+@import "../utils/mixin.scss";
+@import "../utils/variables.scss";
+
+.about-us_wrapper{
+    height: 100dvh;
+    width: 100%;
+    @include aboutUs;
+}

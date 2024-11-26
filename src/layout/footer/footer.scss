@@ -1,0 +1,42 @@
+@import "../../utils/mixin.scss";
+@import "../../utils/variables.scss";
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    color: white;
+    background: $corporate-color;
+    font-size: 20px;
+    z-index: -1;
+    .link-row{
+        margin: 5rem 0;
+        letter-spacing: 2px;
+        text-align: center;
+        @media screen and (max-width: $layout-breakpoint-xs-small){ 
+            display: grid;
+            line-height: 3rem;
+            margin: 2rem auto;
+            width: 100%;
+            text-align: center;
+            place-content: center;
+            align-items: center;           
+        }
+        @media screen and (min-width: $layout-breakpoint-xs-small + 1) and (max-width: $layout-breakpoint-medium){ 
+            margin: 5rem auto;
+            width: 90%;
+            letter-spacing: 1px;
+            text-align: center;            
+
+        }
+        a{
+            margin-right: 3rem;
+            color: white;
+            @media screen and (max-width: $layout-breakpoint-xs-small){ 
+                margin-right: 0;           
+            }
+        }
+    }
+}
